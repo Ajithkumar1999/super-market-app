@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row p-3 align-items-center border-bt">
+        <div class="col-4"><img src="//vegina-store.myshopify.com/cdn/shop/files/logo-1.svg?v=16961549567594775061" class="img-fluid" alt="Vegist" style="width: 105px;"></div>
+        <div class="col-3"> 
+            <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form></div>
+        <div class="col-5">
+            <div class="account-section d-flex">            
+                    <div class="ac-main d-flex ">
+                        <mat-icon>person_outline</mat-icon>
+                        <div class="acc-details">
+                            <h4>ACCOUNT</h4>
+                            <div class="d-flex"><span>Register</span> <span>Login</span></div>
+                        </div>
+                    </div>                
+                    <div class="cart-section d-flex">                    
+                        <mat-icon>favorite_border</mat-icon>
+                            <mat-icon><mat-icon>shopping_cart</mat-icon></mat-icon>                    
+                    </div>                    
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="menu-list col-9">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Collection</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Buy vegist</a></li>
+        </ul>
+        <div class="col-3">
+            <div class="contact-sec">
+                <mat-icon>call</mat-icon>
+                <div>
+                    <h6>Help line</h6>
+                    <input type="tel" id="phone" value="0123 456 789" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!-- carousel start -->
+<div class="wrapper">
+    <owl-carousel-o [options]="customOptions">
+  
+      <ng-container *ngFor="let slide of apiData">
+        <ng-template class="slide" carouselSlide [id]="slide.id">
+            <div class="slide-content" [ngClass]="slide.name">
+                <h6>{{slide.title}}</h6>
+                <p>{{slide.txt}}</p>
+                <button mat-button class="shop-now">Shop now</button>
+            </div>
+          <img [src]="slide.url" >         
+        </ng-template>
+      </ng-container>
+  
+    </owl-carousel-o>  
+  </div>
+  
+<!-- carousel end -->
+

@@ -1,0 +1,92 @@
+@import "../../../assets/utility/common.scss";
+.account-section{
+    mat-icon{
+        font-size: 35px;
+        margin-right: 5px;
+        height: auto;
+        width: auto;
+    }
+    .ac-main {
+        width: 50%;    
+        .acc-details{
+            h4 {
+                color: #f5ab1e !important;
+                display: block;
+                font-size: 13px;
+                line-height: normal;
+                font-weight: 600;
+                text-transform: uppercase;
+            }     
+        }
+        span{
+            font-size: 11px;
+            color: #000;
+            padding-right: 5px;
+            margin-right: 5px;        
+        }
+        span:first-child{
+            border-right: 1px solid #c3c3c3;
+        }
+    }
+}
+.border-bt{
+    border-bottom: 1px solid #c3c3c3;
+}
+
+.menu-list {
+    display: flex;    
+    align-items: center;    
+    li{
+        a{
+            font-size: 14px;
+            display: inline;
+            text-decoration: none;
+            position: relative;
+            padding: 15px 20px;
+            font-weight: 500;
+            color: #000;
+            font-family: $Poppins-Regular;
+            &:hover{
+                    color: #f5ab1e !important;
+            }
+        }
+    }
+}
+.contact-sec{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 20px;
+    padding: 15px 20px;
+    mat-icon{
+        font-size: 35px;
+        height: auto;
+        line-height: initial;
+        width: auto;
+    }
+    h6{
+        color: #f5ab1e;        
+        margin: 0;
+    }
+    input{
+        border: 0;
+        outline: 0;        
+    }
+}
+
+.shop-now{
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #f5ab1e;
+    background-color: #f5ab1e;
+    text-align: center ;       
+    transition: all  ease-out 250ms;
+}
+.shop-now:hover{
+    color: #f5ab1e !important;
+    transition: all  ease-in 250ms;
+    background: #fff !important;
+}

@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row pt-5 pb-5 justify-center">
+    <div class="col-5">
+        <div class="category-one">
+            <img src="../../../assets/images/banner-1.jpg" alt="banner">
+        </div>
+    </div>
+    <div class="col-5">
+      <div class="category-one">
+        <img src="../../../assets/images/banner-3.jpg" alt="banner">
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper category-section">
+  <h2>Shop by Category</h2>
+  <div class="carousel-cat">
+      <owl-carousel-o [options]="customOptions">
+
+          <ng-container *ngFor="let slide of apiData">
+            <ng-template class="cat-slide" carouselSlide [id]="slide.id">
+                <!-- <div class="slide-content" [ngClass]="slide.name">
+                    <h6>{{slide.title}}</h6>
+                    <p>{{slide.txt}}</p>
+                    <button mat-button class="shop-now">Shop now</button>
+                </div> -->
+              <div class="cat-main">
+                <img [src]="slide.url" >      
+                <h6>{{slide.name}}</h6>   
+              </div>
+            </ng-template>
+          </ng-container>
+      
+        </owl-carousel-o>  
+  </div>
+</div>  
+<div class="trending-prod">
+  <h2>Trending Products</h2>
+  <div class="container">
+    <div class="carousel-cat">
+      <owl-carousel-o [options]="trendingProd">
+  
+          <ng-container *ngFor="let slide of trendingItem">
+            <ng-template class="cat-slide" carouselSlide [id]="slide.id">              
+              <div class="trending-main">
+                <img [src]="slide.url" >      
+                <h6>{{slide.name}}</h6>   
+              </div>
+            </ng-template>
+          </ng-container>
+      
+        </owl-carousel-o>  
+  </div>
+  </div>
+</div>

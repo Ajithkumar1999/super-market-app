@@ -1,21 +1,66 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$supermarketapp-primary: mat.define-palette(mat.$indigo-palette);
+$supermarketapp-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$supermarketapp-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$supermarketapp-theme: mat.define-light-theme((
+  color: (
+    primary: $supermarketapp-primary,
+    accent: $supermarketapp-accent,
+    warn: $supermarketapp-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($supermarketapp-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/tailwindcss/base.css";
+@import "../node_modules/tailwindcss/components.css";
+@import "../node_modules/tailwindcss/utilities.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 html{
     overflow: hidden;
 }
 body{
+    overflow-y: auto;
     margin: 0;
     box-sizing: border-box;        
 }
 *{font-family: 'Poppins-Light';}
-
+@import "./assets/utility/common.scss";
 @font-face {
     font-family: 'Poppins-Light';
-    src: url('/super-market-app/src/assets/fonts/poppins/Poppins-Light.eot');
-    src: url('/super-market-app/src/assets/fonts/poppins/Poppins-Light.eot') format('embedded-opentype'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Light.woff2') format('woff2'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Light.woff') format('woff'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Light.ttf') format('truetype'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Light.svg') format('svg');
+    src: url('./assets/fonts/poppins/Poppins-Light.eot');
+    src: url('./assets/fonts/poppins/Poppins-Light.eot') format('embedded-opentype'),
+        url('./assets/fonts/poppins/Poppins-Light.woff2') format('woff2'),
+        url('./assets/fonts/poppins/Poppins-Light.woff') format('woff'),
+        url('./assets/fonts/poppins/Poppins-Light.ttf') format('truetype'),
+        url('./assets/fonts/poppins/Poppins-Light.svg') format('svg');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -23,39 +68,38 @@ body{
 
 @font-face {
     font-family: 'Poppins-Medium';
-    src: url('/super-market-app/src/assets/fonts/poppins/Poppins-Medium.eot');
-    src: url('/super-market-app/src/assets/fonts/poppins/Poppins-Medium.eot') format('embedded-opentype'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Medium.woff2') format('woff2'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Medium.woff') format('woff'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Medium.ttf') format('truetype'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Medium.svg') format('svg');
+    src: url('./assets/fonts/poppins/Poppins-Medium.eot');
+    src: url('./assets/fonts/poppins/Poppins-Medium.eot') format('embedded-opentype'),
+        url('./assets/fonts/poppins/Poppins-Medium.woff2') format('woff2'),
+        url('./assets/fonts/poppins/Poppins-Medium.woff') format('woff'),
+        url('./assets/fonts/poppins/Poppins-Medium.ttf') format('truetype'),
+        url('./assets/fonts/poppins/Poppins-Medium.svg') format('svg');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Poppins-SemiBold';
-    src: url('/super-market-app/src/assets/fonts/poppins/Poppins-SemiBold.eot');
-    src: url('/super-market-app/src/assets/fonts/poppins/Poppins-SemiBold.eot') format('embedded-opentype'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-SemiBold.woff2') format('woff2'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-SemiBold.woff') format('woff'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-SemiBold.ttf') format('truetype'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-SemiBold.svg#Poppins-SemiBold') format('svg');
-    font-weight: 600;
+    font-family: 'Poppins-Regular';
+    src: url('./assets/fonts/poppins/Poppins-Regular.eot');
+    src: url('./assets/fonts/poppins/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/poppins/Poppins-Regular.woff2') format('woff2'),
+        url('./assets/fonts/poppins/Poppins-Regular.woff') format('woff'),
+        url('./assets/fonts/poppins/Poppins-Regular.ttf') format('truetype'),
+        url('./assets/fonts/poppins/Poppins-Regular.svg') format('svg');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
-    font-family: 'Poppins-Regular';
-    src: url('/super-market-app/src/assets/fonts/poppins/Poppins-Regular.eot');
-    src: url('/super-market-app/src/assets/fonts/poppins/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Regular.woff2') format('woff2'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Regular.woff') format('woff'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Regular.ttf') format('truetype'),
-        url('/super-market-app/src/assets/fonts/poppins/Poppins-Regular.svg') format('svg');
-    font-weight: normal;
+    font-family: 'Poppins-SemiBold';
+    src: url('./assets/fonts/poppins/Poppins-SemiBold.eot');
+    src: url('./assets/fonts/poppins/Poppins-SemiBold.eot') format('embedded-opentype'),
+        url('./assets/fonts/poppins/Poppins-SemiBold.woff2') format('woff2'),
+        url('./assets/fonts/poppins/Poppins-SemiBold.woff') format('woff'),
+        url('./assets/fonts/poppins/Poppins-SemiBold.ttf') format('truetype'),
+        url('./assets/fonts/poppins/Poppins-SemiBold.svg#Poppins-SemiBold') format('svg');
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
@@ -72,3 +116,58 @@ body{
     font-display: swap;
 }
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.owl-carousel.owl-drag .owl-item {
+    position: relative;
+    .slide-content{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        text-align: center;
+        z-index: 1;
+        width: 100%;
+        max-width: 24rem;
+        flex-direction: column;
+        justify-content: center;
+        h6{
+            font-size: 16px;
+            font-family: $Poppins-Medium;            
+        }
+        p{
+            font-size: 34px;            
+            font-family: $Poppins-SemiBold;
+        }
+    }    
+}
+.slide-content.first{
+    left: 28.3rem;
+    top: 11rem;
+}
+.slide-content.second{    
+    left: 5%;
+    top: 10rem;    
+    color: #fff;
+}
+.slide-content.third{
+    top: 10rem;
+    right: 7rem;
+    color: #000;    
+}
+.cat-slide img::before{    
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
